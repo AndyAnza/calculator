@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Sixtyfour&display=swap");
+
+body {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#calculator-body {
+  background-color: rgb(33, 33, 33);
+  width: 20vw;
+  height: 55vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+h1 {
+  color: rgb(252, 211, 157);
+  font-family: "Orbitron", sans-serif;
+  font-size: small;
+  border-bottom: 2px solid red;
+  justify-self: flex-start;
+}
+
+#input-first-layer {
+  background-color: rgb(16, 16, 16);
+  height: 7vh;
+  width: 18vw;
+  padding: 2px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+#input-second-layer {
+  background-color: rgb(168, 154, 137);
+  height: 6vh;
+  width: 17vw;
+  padding: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+#display {
+  background-color: rgb(185, 157, 121);
+  width: 16vw;
+  height: 5vh;
+  font-size: xx-large;
+  font-family: "Orbitron", sans-serif;
+  text-align: end;
+}
+
+#btn-numbers-grid {
+  background-color: rgb(252, 211, 157);
+  width: 18vw;
+  height: 40vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.black-btn,
+.c-btn,
+.equal-btn {
+  color: white;
+  margin: 5px;
+  border-radius: 7px;
+  border: 6px solid rgb(16, 16, 16);
+  font-family: "Orbitron", sans-serif;
+  font-size: larger;
+}
+
+.c-btn {
+  grid-column: 1 / span 2;
+}
+
+.equal-btn {
+  grid-column: 3 / span 2;
+}
+.black-btn {
+  background-color: rgb(44, 44, 44);
+}
+
+.equal-btn {
+  background-color: rgb(104, 90, 43);
+}
+
+.c-btn {
+  background-color: rgba(234, 99, 58, 0.95);
+}
