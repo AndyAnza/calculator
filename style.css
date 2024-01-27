@@ -79,6 +79,12 @@ h1 {
   font-size: larger;
 }
 
+.black-btn:hover,
+.c-btn:hover,
+.equal-btn:hover {
+  background-color: red;
+}
+
 .c-btn {
   grid-column: 1 / span 2;
 }
