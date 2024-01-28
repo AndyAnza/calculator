@@ -85,7 +85,7 @@ btnClear.addEventListener("click", clearCalculator);
 //////////////////////
 
 const total = function () {
-  const total = eval(display.value);
+  const total: string = eval(display.value);
   //   console.log(total);
   display.value = total;
 };
