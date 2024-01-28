@@ -23,10 +23,10 @@ The logic of a JavaScript calculator typically involves handling user input, per
 
 The actual implementation details may vary based on the specific requirements of the calculator and the design choices you make.
 */
-var currentInputEle = document.getElementById("display");
-var currentInput = currentInputEle.value;
-var previousInput;
-var currentOperation = 0;
+var display = document.getElementById("display");
+var currentInput = "";
+var previousInput = "";
+var currentOperation;
 var btnOne = document.getElementById("one-btn");
 var btnTwo = document.getElementById("two-btn");
 var btnThree = document.getElementById("three-btn");
@@ -48,85 +48,97 @@ var btnPoint = document.getElementById("point-btn");
 ///////////////////
 var continuosInput = function () {
     btnOne.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "1";
+        display.value = display.value + "1";
     });
     btnTwo.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "2";
+        display.value = display.value + "2";
     });
     btnThree.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "3";
+        display.value = display.value + "3";
     });
     btnFour.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "4";
+        display.value = display.value + "4";
     });
     btnFive.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "5";
+        display.value = display.value + "5";
     });
     btnSix.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "6";
+        display.value = display.value + "6";
     });
     btnSeven.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "7";
+        display.value = display.value + "7";
     });
     btnEight.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "8";
+        display.value = display.value + "8";
     });
     btnNine.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "9";
+        display.value = display.value + "9";
     });
     btnZero.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "0";
+        display.value = display.value + "0";
     });
     btnAdd.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "+";
+        display.value = display.value + "+";
     });
     btnSub.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "-";
+        display.value = display.value + "-";
     });
     btnMult.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "*";
+        display.value = display.value + "*";
     });
     btnDiv.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "/";
+        display.value = display.value + "/";
     });
     btnPerc.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + "%";
+        display.value = display.value + "%";
     });
     btnPoint.addEventListener("click", function (e) {
-        currentInputEle.value = currentInputEle.value + ".";
+        display.value = display.value + ".";
     });
 };
 continuosInput();
 //////////////////////////
-function add(num1, num2) {
-    var sum = num1 + num2;
-    return sum;
-}
-function operation() {
-    var previousInput = parseFloat(currentInputEle.value);
-    console.log("previousInput:", previousInput, typeof previousInput);
-    clearCalculator();
-    var currentInput = parseFloat(currentInputEle.value);
-    console.log("currentInput", currentInput, typeof currentInput);
-    if (!isNaN(previousInput) && !isNaN(currentInput)) {
-        var sum = add(previousInput, currentInput);
-        console.log("sum:", sum);
-        // currentInputEle.value = sum.toString(); // Update the input with the result
-        return sum;
-    }
-    else {
-        console.error("Invalid input. Please enter valid numbers.");
-    }
-}
-btnAdd.addEventListener("click", operation);
+// function add(num1: number, num2: number): number {
+//   const sum = num1 + num2;
+//   return sum;
+// }
+// function operation() {
+//   const previousInput = parseFloat(display.value);
+//   console.log("previousInput:", previousInput, typeof previousInput);
+//   clearCalculator();
+//   let currentInput = parseFloat(display.value);
+//   console.log("currentInput", currentInput, typeof currentInput);
+//   if (!isNaN(previousInput) && !isNaN(currentInput)) {
+//     const sum = add(previousInput, currentInput);
+//     console.log("sum:", sum);
+//     // display.value = sum.toString(); // Update the input with the result
+//     return sum;
+//   } else {
+//     console.error("Invalid input. Please enter valid numbers.");
+//   }
+// }
+// btnAdd.addEventListener("click", operation);
 ////////////////////////
-function total() {
-    console.log(operation());
-}
-btnEqual.addEventListener("click", total);
+// function total() {
+//   console.log(operation());
+// }
+// btnEqual.addEventListener("click", total);
 //////////////////////CLEAR✅
 var clearCalculator = function () {
-    currentInputEle.value = "";
+    display.value = "";
 };
 btnClear.addEventListener("click", clearCalculator);
 //////////////////////
+// const calculations = {
+//   "/": (a, b) => a / b,
+//   "*": (a, b) => a * b,
+//   "+": (a, b) => a + b,
+//   "-": (a, b) => a - b,
+//   "=": (a, b) => (a = b),
+// };
+var total = function () {
+    var total = eval(display.value);
+    console.log(total);
+    display.value = total;
+};
+btnEqual.addEventListener("click", total);
